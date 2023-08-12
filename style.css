@@ -1,0 +1,54 @@
+body {
+    font-size: 16px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+h1 {
+    font-size: 3.5em;
+}
+
+input {
+    height: 30px;
+    width: 100%;
+    border: 1px solid rgb(117, 116, 116);
+    border-radius: 5px;
+}
+
+button {
+    padding: 5px 35px;
+    margin: 10px;
+    background-color: rgb(197, 2, 152);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    justify-self: center;
+    width: fit-content;
+    height: 50px;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+    row-gap: 5px;
+}
+
+#main-container {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+#button-container {
+    padding: 20px 0;
+}
