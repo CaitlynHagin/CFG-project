@@ -38,25 +38,7 @@ const affirmations = [
   "My possibilities are limitless."
 ];
 
-function createCard() {
-  document.getElementById("main-container").style = "display: none";
-
-  const fname = document.getElementById('fname').value;
-  const lname = document.getElementById('lname').value;
-  const email = document.getElementById('email').value;
-  const number = document.getElementById('number').value;
-
-  const userName = document.getElementById('display-name');
-  const userEmail = document.getElementById('display-email');
-  const userNumber = document.getElementById('display-number');
-  userName.textContent = fname + lname;
-  userEmail.textContent = email;
-  userNumber.textContent = number;
-  const userAffirmation = document.getElementById('display-affirmation');
-  userAffirmation.textContent = affirmation();
-}
-
-const createInputs = () => {
+function createInputs() {
   const form = document.getElementById("form");
   
   for (let i = 0; i < inputs.length; i++) {
@@ -70,11 +52,37 @@ const createInputs = () => {
     input.setAttribute("type", inputs[i].type);
     input.setAttribute("name", inputs[i].name);
   }
-}
+};
+
+function toggleElement(el, style) {
+  document.getElementById(el).style = `display: ${style}`;
+};
 
 function affirmation() {
   const randomNumber = Math.floor(Math.random());
   return affirmations[randomNumber];
-}
+};
 
-createInputs()
+createInputs();
+
+const formValues = {
+  fname: document.getElementById('fname').value,
+  lname: document.getElementById('lname').value,
+  email: document.getElementById('email').value,
+  number: document.getElementById('number').value
+};
+
+function createCard() {
+  toggleElement("form-container", "none");
+  toggleElement("card-container", "flex");
+
+  const userName = document.getElementById('display-name');
+  const userEmail = document.getElementById('display-email');
+  const userNumber = document.getElementById('display-number');
+  const userAffirmation = document.getElementById('display-affirmation');
+
+  userName.textContent = formValues.fname + formValues.lname;
+  userEmail.textContent = formValues.email;
+  userNumber.textContent = formValues.number;
+  userAffirmation.textContent = affirmation();
+};
