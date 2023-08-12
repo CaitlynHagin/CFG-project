@@ -14,6 +14,7 @@ const affirmations = [
 
 function createCard(event) {
     document.getElementById("main-container").style = "display: none"
+    // document.getElementById("display-container").style = "display: "
     document.getElementById('fname').value
     const fname = document.getElementById('fname').value;
     const lname = document.getElementById('lname').value;
