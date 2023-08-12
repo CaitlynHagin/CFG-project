@@ -56,9 +56,9 @@ function createCard() {
   userAffirmation.textContent = affirmation();
 }
 
-
 const createInputs = () => {
   const form = document.getElementById("form");
+  
   for (let i = 0; i < inputs.length; i++) {
     const inputContainer = form.appendChild(document.createElement("div"));
     inputContainer.classList.add("input-container");
