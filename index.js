@@ -24,7 +24,7 @@ function createCard(event) {
     const userName = document.getElementById('display-name'); 
     const userEmail = document.getElementById('display-email'); 
     const userNumber = document.getElementById('display-number'); 
-    userName.textContent = fname + lname;
+    userName.textContent = fname + ' ' + lname;
     userEmail.textContent = email;
     userNumber.textContent = number;
     const userAffirmation = document.getElementById('display-affirmation'); 
