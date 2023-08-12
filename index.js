@@ -1,3 +1,17 @@
+
+const affirmations = [
+    "I am full of positive energy.",
+  "I have the strength to achieve my goals.",
+  "Every day, I am becoming a better version of myself.",
+  "I possess the abilities needed to overcome challenges.",
+  "My actions bring me success.",
+  "I feel gratitude for each new day.",
+  "I believe in myself and my abilities.",
+  "I love and accept myself unconditionally.",
+  "I have control over my thoughts and emotions.",
+  "My possibilities are limitless."
+];
+
 function createCard(event) {
     document.getElementById("main-container").style = "display: none"
     document.getElementById('fname').value
@@ -12,6 +26,12 @@ function createCard(event) {
     userName.textContent = fname + lname;
     userEmail.textContent = email;
     userNumber.textContent = number;
+    const userAffirmation = document.getElementById('display-affirmation'); 
+    userAffirmation.textContent = affirmation();
 }
 
+function affirmation () {
+    const randomNumber = Math.floor(Math.random() );
+    return affirmations[randomNumber];
+}
 
