@@ -1,3 +1,3 @@
-document.write('Hello world');
-
-d
+function createCard(event) {
+    document.getElementById("main-container").style = "display: none"
+}
