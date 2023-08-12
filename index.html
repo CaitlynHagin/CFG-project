@@ -12,18 +12,48 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,300;10..48,400;10..48,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap"
     rel="stylesheet">
-  <title>Document</title>
+  <script src="index.js"></script>
+  <title>Final Project</title>
 </head>
 
 <body>
   <div id="main-container">
-    <h1>Create you card</h1>
-    <div id="form"></div>
-    <div id="button-container">
-      <button onclick="createCard()">Create card</button>
+    <div class="form">
+      <h1>Create you card</h1>
+      <div class="input-container">
+        <label for="fname">First name</label>
+        <input id="fname" type="text" name="first name">
+      </div>
+      <div class="input-container">
+        <label for="lname">Last name</label>
+        <input id="lname" type="text" name="last name">
+      </div>
+      <div class="input-container">
+        <label for="email">E-mail address</label>
+        <input id="email" type="text" name="email">
+      </div>
+      <div class="input-container">
+        <label for="Number">Number</label>
+        <input id="number" type="text" name="number">
+      </div>
+      <div id="button-container">
+        <button onclick="createCard()">Create card</button> 
+        <!-- when this button is clicked it takes your input and displays it as a card-->
+      </div>
     </div>
   </div>
-  <script src="index.js"></script>
+
+  <!-- Card to be displayed // p tags to be kept clear because the user inputs information-->
+  <div id="display-container">
+    <img id="avatar" src="https://images.unsplash.com/photo-1691414061225-b9a85b1027ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80"> 
+    <div id="container-text"> 
+      <p id="display-name"></p>
+      <p id="display-email"></p>
+      <p id="display-number"></p>
+      <p id="display-affirmation"></p>
+    </div>
+  </div>
 </body>
 
 </html>
+

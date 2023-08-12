@@ -57,3 +57,20 @@ button {
 #button-container {
     padding: 20px 0;
 }
+
+#display-container {
+    background-color: lightpink;
+    min-width: 200px;
+    height: 200px;
+    margin: 50px;
+    padding: 20px;
+    contain: content;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+#avatar {
+    height: 200px;
+}
+
