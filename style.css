@@ -28,25 +28,30 @@ button {
     font-weight: 600;
 }
 
-.form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 15px;
-}
-
 .input-container {
     display: flex;
     flex-direction: column;
-    width: 300px;
     align-items: center;
     row-gap: 5px;
+    width: 100%;
 }
 
 #main-container {
     display: flex;
-    justify-content: center;
-    margin: 50px;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    max-width: 300px;
+    width: 100%;
 }
 
 #button-container {
