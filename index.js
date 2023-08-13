@@ -22,6 +22,12 @@ const inputs = [
     label: 'Number',
     type: 'text',
     name: 'number'
+  }, 
+  {
+    id: 'avatar-url',
+    label: 'Avatar link',
+    type: 'text',
+    name: 'avatar-url'
   }
 ];
 
@@ -59,30 +65,77 @@ function toggleElement(el, style) {
 };
 
 function affirmation() {
-  const randomNumber = Math.floor(Math.random());
+  const randomNumber = Math.floor(Math.random() * 10);
+  console.log(Math.floor(Math.random() * 10));
   return affirmations[randomNumber];
 };
+function getInputs() {
+  const inputElements = inputs.reduce((acc, curr) => {
+    acc[curr.id] = document.getElementById(curr.id)
+    return acc;
+  }, {});
+  return inputElements;
+}
 
-createInputs();
+function getFormValues() {
+  const formValues = inputs.reduce((acc, curr) => {
+    acc[curr.id] = document.getElementById(curr.id).value
+    return acc
+  }, {});
+  return formValues;
+};
 
-const formValues = {
-  fname: document.getElementById('fname').value,
-  lname: document.getElementById('lname').value,
-  email: document.getElementById('email').value,
-  number: document.getElementById('number').value
+function isButtonDisabled() {
+  const formValues = getFormValues();
+  const values = Object.values(formValues);
+  let shouldDisabledButton = false;
+
+  for (let i = 0; i < values.length; i++) {
+    if (!values[i]) {
+      shouldDisabledButton = true;
+    }
+  };  
+  const button = document.getElementById('creare-card-button');
+  
+  if (shouldDisabledButton) {
+    button.disabled = true;
+    button.style = 'background-color:  lightpink';
+    
+  } else {
+    button.disabled = false;
+    button.style = 'background-color:  rgb(197, 2, 152)'
+    button.style = 'cursor: pointer';
+  }
+};
+
+function handleInputsChage() {
+  const inputElements = getInputs();
+  const elements = Object.values(inputElements);
+   
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].addEventListener('change', isButtonDisabled);
+  }
 };
 
 function createCard() {
   toggleElement("form-container", "none");
   toggleElement("card-container", "flex");
 
+  const formValues = getFormValues();
+
   const userName = document.getElementById('display-name');
   const userEmail = document.getElementById('display-email');
   const userNumber = document.getElementById('display-number');
+  const avatar = document.getElementById('avatar');
   const userAffirmation = document.getElementById('display-affirmation');
 
-  userName.textContent = formValues.fname + formValues.lname;
+  userName.textContent = formValues.fname + ' ' + formValues.lname;
   userEmail.textContent = formValues.email;
   userNumber.textContent = formValues.number;
+  avatar.setAttribute('src', formValues["avatar-url"])
   userAffirmation.textContent = affirmation();
 };
+
+createInputs();
+isButtonDisabled();
+handleInputsChage();
