@@ -1,6 +1,7 @@
 body {
     font-size: 16px;
     font-family: 'Bricolage Grotesque', sans-serif;
+    background-color: lightskyblue;
 }
 
 h1 {
@@ -68,9 +69,15 @@ button {
     display: flex;
     flex-direction: row;
     gap: 50px;
+    border: 2px;
+    border-color: black;
 }
 
 #avatar {
     height: 200px;
 }
 
+#input { 
+    background-color: lightseagreen;
+
+}
