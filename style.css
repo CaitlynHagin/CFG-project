@@ -62,7 +62,7 @@ button {
 #card-container {
     background-color: lightpink;
     min-width: 200px;
-    max-width: 500px;
+    /*max-width: 500px; */
     height: 200px;
     margin: 50px;
     padding: 20px;
