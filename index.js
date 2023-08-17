@@ -30,6 +30,7 @@ const inputs = [
     name: 'avatar-url'
   }
 ];
+// array of affirmations for card to be displayed 
 
 const affirmations = [
   "I am full of positive energy.",
@@ -63,6 +64,7 @@ function createInputs() {
 function toggleElement(el, style) {
   document.getElementById(el).style = `display: ${style}`;
 };
+/* gets a random number  and choses that affirmation so its random everytime*/ 
 
 function affirmation() {
   const randomNumber = Math.floor(Math.random() * 10);
